@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- start linking  -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- icon -->
+  <link rel="icon" href="img/log.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- end linking -->
+  <title>NutFlix - admin</title>
+</head>
+<body>
+<!-- start admin -->
+<section id="admin">
+  <!-- start sidebar -->
+  <div class="sidebar">
+    <!-- start with head -->
+    <div class="head">
+      <div class="logo">
+        <img src="img/logo-admin.png" alt="">
+      </div>
+    </div>
+    <!-- end with head -->
+    <!-- start the list -->
+    <div id="list">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fa fa-adjust"></i>Tổng
+            quan</a></li>
+        <!-- end user interface submenu -->
+        <li class="nav-item"><a href="cat.html" class="nav-link"><i class="fa fa-user"></i>Loại sản
+            phẩm</a></li>
+        <li class="nav-item"><a href="products.html" class="nav-link"><i class="fa fa-edit"></i>Sản phẩm</a>
+        </li>
+        <li class="nav-item"><a href="orders.html" class="nav-link"><i class="fa fa-money-bill-alt"></i>Hóa
+            đơn</a></li>
+        <li class="nav-item"><a href="income.html" class="nav-link"><i class="fa fa-dollar-sign"></i>Thu
+            nhập</a></li>
+      </ul>
+    </div>
+    <!-- end the list -->
+  </div>
+  <!-- end sidebar -->
+  <!-- start content -->
+  <div class="content">
+    <!-- start content head -->
+    <div class="head">
+      <!-- head top -->
+      <div class="top">
+        <div class="left">
+          <button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
+          <button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-expand-arrows-alt"></i></button>
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-home"></i>Trở lại tổng quan</button>
+        </div>
+        <div class="right">
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-bell"></i></button>
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-envelope"></i></button>
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trấn Hào</button>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+             <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+             <a class="dropdown-item" href="login.html">Đăng nhập</a>
+             <a class="dropdown-item" href="#">Đăng xuất</a>
+           </div>
+          </div>
+        </div>
+      </div>
+      <!-- end head top -->
+      <!-- start head bottom -->
+      <div class="bottom">
+        <div class="left">
+          <h1>Tổng quan</h1>
+        </div>
+        <div class="right">
+          <h1>Tổng quan</h1>
+        </div>
+      </div>
+      <!-- end head bottom -->
+    </div>
+    <!-- end content head -->
+    <!-- start with the real content -->
+    <div id="real">
+      <div class="row">
+       
+        <!-- start analytics -->
+        <div class="col-lg-3">
+          <div class="analytics">
+            <div class="card">
+              <div class="icon"><i class="fa fa-video"></i></div>
+              <div class="text" >
+                <h1 id="dm"></h1>
+                <p>loại sản phẩm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="analytics">
+            <div class="card">
+              <div class="icon"><i class="fab fa-vimeo-v"></i></div>
+              <div class="text">
+                <h1 id="sp"></h1>
+                <p>Tổng sản phẩm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="analytics">
+            <div class="card">
+              <div class="icon"><i class="fa fa-users"></i></div>
+              <div class="text">
+                <h1 id="hd"></h1>
+                <p>Tổng hóa đơn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="analytics">
+            <div class="card">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <div class="text">
+                <h1>43</h1>
+                <p>Tổng thu nhập</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end analytics -->
+      </div>
+    </div>
+    <div class="div" style="width: 500px">
+    <canvas id="myChart" width="400"  height="400"></canvas>
+  </div>
+    <!-- end the real content -->
+  </div>
+  <!-- end content -->
+</section>
+<!-- end admin -->
+<!-- start screpting -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<!-- end screpting -->
+</body>
+</html>

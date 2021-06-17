@@ -1,0 +1,359 @@
+<!-- <script>
+	$().ready(function () {
+		$("#newContactForm").validate({
+			rules: {
+				urlHinh: {
+					required: true
+				},
+				tendt: {
+					required: true,
+					maxlength: 100,
+					minlength: 4
+				},
+				gia: {
+					required: true
+				},
+				timenhaphang: {
+					required: true
+				},
+				soluongtonkho: {
+					required: true
+				}
+			},
+			messages: {
+				urlHinh: {
+					required: "<span class='badge badge-warning'>Vui lòng chọn hình</span>"
+				},
+				tendt: {
+					required: "<span class='badge badge-warning'>Không để trống tên sản phẩm</span>",
+					maxlength: "<span class='badge badge-danger'>Tên sản phẩm dài quá, phải nhỏ hơn 100 ký tự</span>",
+					minlength: "<span class='badge badge-danger'>Tên sản phẩm ngắn quá, phải lớn hơn 4 ký tự</span>"
+				},
+				gia: {
+					required: "<span class='badge badge-warning'>Vui lòng nhập giá</span>"
+				},
+				timenhaphang: {
+					required: "<span class='badge badge-warning'>Không để trống ngày nhập hàng</span>"
+				},
+				soluongtonkho: {
+					required: "<span class='badge badge-warning'>Vui lòng nhập số lượng tồn kho</span>"
+				}
+			}
+		});
+	});
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- start linking  -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<!-- icon -->
+	<link rel="icon" href="img/log.png">
+	<link rel="stylesheet" href="css/style.css">
+	<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"> </script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<!-- end linking -->
+	<title>NutFlix - admin</title>
+</head>
+
+<body>
+	<!-- start admin -->
+	<section id="admin">
+		<!-- start sidebar -->
+		<div class="sidebar">
+			<!-- start with head -->
+			<div class="head">
+				<div class="logo">
+					<img src="img/logo-admin.png" alt="">
+				</div>
+			</div>
+			<!-- end with head -->
+			<!-- start the list -->
+			<div id="list">
+				<ul class="nav flex-column">
+					<li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-adjust"></i>Tổng
+							quan</a></li>
+					<!-- end user interface submenu -->
+					<li class="nav-item"><a href="cat.html" class="nav-link"><i class="fa fa-user"></i>Loại sản
+							phẩm</a></li>
+					<li class="nav-item"><a href="products.html" class="nav-link active"><i class="fa fa-edit"></i>Sản
+							phẩm</a>
+					</li>
+					<li class="nav-item"><a href="orders.html" class="nav-link"><i class="fa fa-money-bill-alt"></i>Hóa
+							đơn</a></li>
+					<li class="nav-item"><a href="income.html" class="nav-link"><i class="fa fa-dollar-sign"></i>Thu
+							nhập</a></li>
+				</ul>
+			</div>
+			<!-- end the list -->
+		</div>
+		<!-- end sidebar -->
+		<!-- start content -->
+		<div class="content">
+			<!-- start content head -->
+			<div class="head">
+				<!-- head top -->
+				<div class="top">
+					<div class="left">
+						<button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
+						<button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
+						<button class="btn btn-info hidden-xs-down"><i class="fa fa-expand-arrows-alt"></i></button>
+						<button class="btn btn-info hidden-xs-down"><i class="fa fa-home"></i>Trở lại tổng quan</button>
+					</div>
+					<div class="right">
+						<button class="btn btn-info hidden-xs-down"><i class="fa fa-bell"></i></button>
+						<button class="btn btn-info hidden-xs-down"><i class="fa fa-envelope"></i></button>
+						<div class="dropdown">
+							<button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Trấn Hào</button>
+							<div class="dropdown-menu" aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="#">Thông tin tài khoản</a>
+								<a class="dropdown-item" href="#">Đăng xuất</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end head top -->
+				<!-- start head bottom -->
+				<div class="bottom">
+					<div class="left">
+						<h1>Sản phẩm</h1>
+					</div>
+					<div class="right">
+						<h1>Tổng quan/Sản phẩm</h1>
+					</div>
+				</div>
+				<!-- end head bottom -->
+			</div>
+			<!-- end content head -->
+			<!-- start with the real content -->
+			<div id="real">
+				<!-- start content here -->
+				<div class="wrap">
+					<section class="app-content" id="contact">
+						<div class="row">
+							<div class="col-md-2">
+								<div class="app-action-panel" id="contacts-action-panel">
+									<div class="action-panel-toggle" data-toggle="class"
+										data-target="#contacts-action-panel" data-class="open">
+										<i class="fa fa-chevron-right"></i>
+										<i class="fa fa-chevron-left"></i>
+									</div><!-- .action-panel-toggle -->
+									<div class="m-b-lg">
+										<a href="#" data-toggle="modal" data-target="#contactModal1"
+											class="btn btn-primary btn-block">Thêm mới</a>
+									</div>
+									<!-- contact category list -->
+									<div id="categories-list" class="app-actions-list scrollable-container">
+
+
+
+									</div><!-- #categories-list -->
+									<div class="m-h-md">
+									</div>
+								</div><!-- .app-action-panel -->
+							</div><!-- END column -->
+
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="mail-toolbar m-b-lg">
+
+											<div class="btn-group" role="group">
+												<a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>
+												<a href="#" class="btn btn-default"><i
+														class="fa fa-exclamation-circle"></i></a>
+											</div>
+
+											<div class="btn-group pull-right" role="group">
+												<a href="#" class="btn btn-default"><i
+														class="fa fa-chevron-left"></i></a>
+												<a href="#" class="btn btn-default"><i
+														class="fa fa-chevron-right"></i></a>
+											</div>
+										</div>
+									</div><!-- END column -->
+								</div><!-- .row -->
+
+								<div id="contacts-list2" class="row">
+
+								</div><!-- #contacts-list -->
+							</div><!-- END column -->
+						</div><!-- .row -->
+					</section><!-- .app-content -->
+				</div><!-- .wrap -->
+
+				<!-- new contact Modal -->
+				<div id="contactModal" class="modal fade" tabindex="-1" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">Sửa sản phẩm</h4>
+							</div>
+							<form id="newContactForm2">
+								<div class="form-group file-upload pt-0 pl-0 pr-0 m-0 w-100">
+									<button class="file-upload-btn" type="button"
+										onclick="$('.file-upload-input').trigger( 'click' )">Chọn ảnh</button>
+										<div id="editUrlHinh"></div>
+									<div class="image-upload-wrap">
+										<input class="file-upload-input" type='file' id="editurlHinh" name="urlHinh"
+											onchange="readURL(this);" />
+										
+										
+										<div class="drag-text">
+											<h3>Click để đổi ảnh, nếu không hãy bỏ qua!</h3>
+										</div>
+									</div>
+									<div class="file-upload-content">
+										<img class="file-upload-image" src="#" alt="your image" />
+										<div class="image-title-wrap">
+											<button type="button" onclick="removeUpload()" class="remove-image">Xóa
+												<span class="image-title">Uploaded Image</span></button>
+										</div>
+									</div>
+								</div>
+								<div class="modal-body">
+									<div class="form-group mb-3">
+										<label for="exampleInputEmail1">Tên sản phẩm</label>
+										<input type="text" name="TenDT" class="form-control" id="edittendt">
+									</div>
+									<div class="row mb-3">
+										<div class="form-group col-sm-6">
+											<label for="">Đơn giá</label>
+											<input type="number" class="form-control" id="editgia" name="Gia"
+												placeholder="Đơn giá">
+										</div>
+										<div class="form-group col-sm-6">
+											<label for="">Giá khuyến mãi</label>
+											<input type="number" class="form-control" id="editgiakm" name="GiaKM"
+												placeholder="Giá khuyến mãi">
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="form-group col-sm-6">
+											<select class="form-control" name="idNSX" id="editdm"
+												placeholder="Nhà sản xuất">
+												<option value="" selected>Chọn nhà sản xuất</option>
+											</select>
+										</div>
+										<div class="form-group col-sm-6">
+											<input type="date" class="form-control" name="ThoiDiemNhapHang"
+												>
+												<div id="edittimenhaphang"></div>
+										</div>
+									</div>
+									<div class="form-group mb-3">
+										<label for="exampleInputEmail2">Số lượng tồn kho</label>
+										<input type="number" name="SoLuongTonKho" class="form-control"
+											id="editsoluongtonkho">
+									</div>
+									<input type="hidden" name="editid" id="editid">
+								</div><!-- .modal-body -->
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+									<button type="submit" class="btn btn-success" onclick="submitForm()" data-dismiss="modal">Lưu</button>
+								</div><!-- .modal-footer -->
+							</form>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				<div id="contactModal1" class="modal fade" tabindex="-1" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">Thêm sản phẩm</h4>
+							</div>
+							<form id="newContactForm">
+								<div class="modal-body">
+									<div class="form-group file-upload pt-0 pl-0 pr-0 m-0 w-100">
+										<button class="file-upload-btn" type="button"
+											onclick="$('.file-upload-input').trigger( 'click' )">Chọn ảnh</button>
+
+										<div class="image-upload-wrap">
+											<input class="file-upload-input" type='file' id="urlHinh" name="urlHinh"
+												onchange="readURL(this);" />
+											<div class="drag-text">
+												<h3>Click để đổi ảnh, nếu không hãy bỏ qua!</h3>
+											</div>
+										</div>
+										<div class="file-upload-content">
+											<img class="file-upload-image" src="#" alt="your image" />
+											<div class="image-title-wrap">
+												<button type="button" onclick="removeUpload()" class="remove-image">Xóa
+													<span class="image-title">Uploaded Image</span></button>
+											</div>
+										</div>
+									</div>
+									<div class="form-group mb-3">
+										<label for="exampleInputEmail1">Tên sản phẩm</label>
+										<input type="text" name="tendt" id="tendt" class="form-control">
+									</div>
+									<div class="row mb-3">
+										<div class="form-group col-sm-6">
+											<label for="">Đơn giá</label>
+											<input type="number" class="form-control" id="gia" name="gia"
+												placeholder="Đơn giá">
+										</div>
+										<div class="form-group col-sm-6">
+											<label for="">Giá khuyến mãi</label>
+											<input type="number" class="form-control" id="giakm" name="giakm"
+												placeholder="Giá khuyến mãi">
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="form-group col-sm-6">
+											<select class="form-control" name="dm" id="dm" placeholder="Nhà sản xuất">
+												<option value="" selected>Chọn nhà sản xuất</option>
+											</select>
+										</div>
+										<div class="form-group col-sm-6">
+											<input type="date" class="form-control" name="timenhaphang"
+												id="timenhaphang">
+										</div>
+									</div>
+									<div class="form-group mb-3">
+										<label for="soluongtonkho">Số lượng tồn kho</label>
+										<input type="number" name="soluongtonkho" class="form-control"
+											id="soluongtonkho">
+									</div>
+								</div><!-- .modal-body -->
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+									<button type="submit" class="btn btn-success" onclick="addSanpham()"
+										data-dismiss="modal">Lưu</button>
+								</div><!-- .modal-footer -->
+							</form>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				<!-- new category Modal -->
+
+				<!-- delete item Modal -->
+				<!-- end content -->
+			</div>
+			<!-- end the real content -->
+		</div>
+		<!-- end content -->
+	</section>
+	<!-- end admin -->
+	<!-- start screpting -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/sanpham.js"></script>
+
+	<!-- end screpting -->
+</body>
+
+</html>

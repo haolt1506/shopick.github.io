@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- start linking  -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- icon -->
+  <link rel="icon" href="img/log.png">
+  <!-- end linking -->
+  <title>NutFlix - admin</title>
+</head>
+<body>
+<!-- start admin -->
+<section id="admin">
+  <!-- start sidebar -->
+  <div class="sidebar">
+    <!-- start with head -->
+    <div class="head">
+      <div class="logo">
+        <img src="img/logo-admin.png" alt="">
+      </div>
+    </div>
+    <!-- end with head -->
+    <!-- start the list -->
+    <div id="list">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-adjust"></i>Tổng
+            quan</a></li>
+        <!-- end user interface submenu -->
+        <li class="nav-item"><a href="cat.html" class="nav-link"><i class="fa fa-user"></i>Loại sản
+            phẩm</a></li>
+        <li class="nav-item"><a href="products.html" class="nav-link"><i class="fa fa-edit"></i>Sản phẩm</a>
+        </li>
+        <li class="nav-item"><a href="orders.html" class="nav-link active"><i class="fa fa-money-bill-alt"></i>Hóa
+            đơn</a></li>
+        <li class="nav-item"><a href="income.html" class="nav-link"><i class="fa fa-dollar-sign"></i>Thu
+            nhập</a></li>
+      </ul>
+    </div>
+    <!-- end the list -->
+  </div>
+  <!-- end sidebar -->
+  <!-- start content -->
+  <div class="content">
+    <!-- start content head -->
+    <div class="head">
+      <!-- head top -->
+      <div class="top">
+        <div class="left">
+          <button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
+          <button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-expand-arrows-alt"></i></button>
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-home"></i>Trở lại tổng quan</button>
+        </div>
+        <div class="right">
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-bell"></i></button>
+          <button class="btn btn-info hidden-xs-down"><i class="fa fa-envelope"></i></button>
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trấn Hào</button>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+             <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+             <a class="dropdown-item" href="#">Đăng xuất</a>
+           </div>
+          </div>
+        </div>
+      </div>
+      <!-- end head top -->
+      <!-- start head bottom -->
+      <div class="bottom">
+        <div class="left">
+          <h1>Hóa đơn chi tiết</h1>
+        </div>
+        <div class="right">
+          <h1>Tổng quan/Hóa đơn/Hóa đơn chi tiết</h1>
+        </div>
+      </div>
+      <!-- end head bottom -->
+    </div>
+    <!-- end content head -->
+    <!-- start with the real content -->
+    <div id="real">
+      <!-- start content here -->
+      <div id="invoice" class="wrap card">
+      	<section class="app-content">
+      		<div class="container-fluid">
+      			<div class="panel panel-default">
+      				<div class="panel-heading bg-white">
+      					<h4 class="panel-title">Thông tin hóa đơn</h4>
+      				</div>
+
+      				<div class="panel-body">
+      					<div class="row">
+      						<div class="col-sm-8 col-xs-6">
+      							<h4 class="fw-600">Google Inc,</h4>
+      							<p><a href="#">www.google.com</a></p>
+      							<p>Công viên phần mềm, Toà nhà Innovation lô 24<br> Quang Trung, Quận 12<br>Thành phố Hồ Chí Minh</p>
+      							<p>Số điện thoại: 012-345-6789<br>Fax: 012-345-6789</p>
+
+      							<h4 class="m-t-lg fw-600">Hóa đơn đến: </h4>
+      							<p>Trấn Hào</p>
+      							<p>52 Phan Huy Ích<br>Quận Gò Vấp</p>
+      						</div>
+      						<div class="col-sm-4 col-xs-6">
+      							<h4 class="fw-600 text-right">HÓA ĐƠN #49021</h4>
+      							<p class="text-right">Ngày: 25/03/2021<br>Ngày đến hạn: 12/06/2021</p>
+
+      							
+      						</div>
+      					</div>
+
+      					<div class="table-responsive m-h-lg">
+      						<table class="table">
+      							<tr><th>#</th><th>Tên sản phẩm</th><th>Số lượng</th><th>Đơn giá</th><th>Thành tiền</th></tr>
+      							<tr><td>#</td><td>iPhone 12 Pro Max</td><td>1</td><td>25.000.000 VNĐ</td><td>25.000.000 VNĐ</td></tr>
+                    <tr><td>#</td><td>iPhone 12 Pro Max</td><td>1</td><td>25.000.000 VNĐ</td><td>25.000.000 VNĐ</td></tr>
+      						</table>
+      					</div>
+
+      					<div class="row">
+      						<div class="col-sm-3 col-sm-push-9">
+      							<p>Tổng số tiền: 50.000.000 VNĐ</p>
+      							<p>Phí VAT: 50.000 VNĐ</p>
+      							<p>Tổng cộng: <span class="text-primary">50.050.000 VNĐ</span></p>
+      							<div class="m-t-lg">
+      								<button type="button" class="btn btn-md btn-primary m-r-lg">Duyệt hóa đơn</button>
+      								<button type="button" class="btn btn-md btn-secondary">In</button>
+      							</div>
+      						</div>
+      					</div>
+      				</div><!-- .panel-body -->
+      			</div>
+      		</div><!-- .container-fluid -->
+      	</section><!-- #dash-content -->
+      </div><!-- .wrap -->
+      <!-- end content -->
+    </div>
+    <!-- end the real content -->
+  </div>
+  <!-- end content -->
+</section>
+<!-- end admin -->
+<!-- start screpting -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- end screpting -->
+</body>
+</html>
