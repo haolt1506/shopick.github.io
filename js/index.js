@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/'
+const url = 'https://haolt1506.github.io/shopick.github.io/'
 
 const fetchAPI = async (url, option) => {
     const response = await fetch(url, option)
